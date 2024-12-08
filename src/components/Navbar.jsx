@@ -14,6 +14,7 @@ const Navbar = () => {
             <Link to="/about"><li>About</li></Link>
             <Link to="/contact"><li>Contact</li></Link>
             <Link to="/login"><li>Login</li></Link>
+            <Link to="/events"><li>Events</li></Link>
             {isAdmin && <Link to="/admin"><li>Admin</li></Link>}
         </ul>
       </div>
