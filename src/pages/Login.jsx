@@ -1,16 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {useNavigate} from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      navigate('/admin');
+    }
+  }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const userData = {
-      username,
-      password,
-    };
-    console.log({ userData });
+    try {
+      const response = await fetch(import.meta.env.VITE_API_ENDPOINT+'/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email:username, password }),
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        localStorage.setItem('token', data.token);
+        navigate('/admin');
+      } else {
+        alert(data.message || 'An error occurred. Please try again.');
+      }
+    } catch (error) {
+      alert('Network error. Please try again later.');
+    }
+
   };
 
   return (
@@ -26,7 +48,7 @@ const Login = () => {
         <form>
           <div className="mb-4">
             <label htmlFor="username" className="block mb-2">
-              Username
+              Email
             </label>
             <input
               type="text"
