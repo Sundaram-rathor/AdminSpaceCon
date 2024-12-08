@@ -2,11 +2,11 @@ import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
-    <div>
+    <div className="h-screen bg-gradient-to-br from-black via-purple-800 to-gray-900">
       <Navbar />
       <div>
+        <div className="mt-10 text-white flex flex-col justify-center items-center">
         {/* Generated with AI */}
-        <div className="bg-gradient-to-br from-black via-purple-800 to-gray-900 text-white h-[89vh] w-screen flex flex-col justify-center items-center">
           <div>
             <h1 className="text-4xl font-bold mb-6">Nakshatra X TDS</h1>
             <p className="text-3xl text-center mb-4">Presents</p>
