@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import {useNavigate} from 'react-router-dom';
 
 const Login = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   useEffect(() => {
@@ -19,7 +19,7 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email:username, password }),
+        body: JSON.stringify({ email, password }),
       });
       const data = await response.json();
 
@@ -47,16 +47,16 @@ const Login = () => {
         <h1 className="text-3xl mb-6 text-center text-white">Login</h1>
         <form>
           <div className="mb-4">
-            <label htmlFor="username" className="block mb-2">
+            <label htmlFor="email" className="block mb-2">
               Email
             </label>
             <input
               type="text"
-              id="username"
-              name="username"
+              id="email"
+              name="email"
               required
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full p-3 rounded outline-none border border-gray-700 focus:outline-none focus:border-blue-500"
             />
           </div>
