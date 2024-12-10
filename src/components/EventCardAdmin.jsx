@@ -1,22 +1,24 @@
 import { Calendar, MapPin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FiEdit } from "react-icons/fi";
+import { MdDeleteOutline } from "react-icons/md";
 
-const EventCard = ({
+const EventCardAdmin = ({
   title,
   date,
   time,
   location,
   description,
   imageUrl,
-  eventURL,
 }) => {
+  const handleDelete = () => {};
   return (
-    <div className="mx-5 bg-white shadow-lg rounded-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+    <div className="w-80 mx-5 bg-white shadow-lg rounded-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
       <div>
-        <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
+        <img src={imageUrl} alt={title} className="w-full h-40 object-cover" />
       </div>
 
-      <div className="p-6 space-y-4">
+      <div className="p-5  space-y-3">
         <div>
           <h2 className="text-xl font-bold text-gray-800 mb-2">{title}</h2>
           <p className="text-gray-600 text-sm line-clamp-2">{description}</p>
@@ -37,9 +39,16 @@ const EventCard = ({
           </div>
         </div>
 
-        <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">
-            <Link to={eventURL}>Click Here to Register 🚀</Link>
+        <div className="flex items-center justify-evenly pt-4 border-t border-gray-200">
+          <Link to={""}>
+            <FiEdit style={{ fontSize: "130%" }} />
+          </Link>
+          <Link to={""}>
+            <MdDeleteOutline style={{ fontSize: "130%" }} />
+          </Link>
+          {/* number of users registered */}
+          <button className="bg-blue-600 text-white px-2 py-1 rounded-full hover:bg-blue-700 transition-colors">
+            {"XXX"} Registered
           </button>
         </div>
       </div>
@@ -47,4 +56,4 @@ const EventCard = ({
   );
 };
 
-export default EventCard;
+export default EventCardAdmin;
