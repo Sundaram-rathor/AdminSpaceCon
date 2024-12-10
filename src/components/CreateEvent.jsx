@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar";
 import { useState } from "react";
 
 const Admin = () => {
@@ -28,9 +27,8 @@ const Admin = () => {
 
   return (
     <div>
-      <div className="h-screen w-screen">
-        <Navbar />
-        <div className="flex-col">
+      <div className="h-[80vh] p-3 text-gray-300">
+        <div className="flex flex-col space-y-2 opacity-85">
           <label htmlFor="eventDate">Date</label>
           <input
             type="date"
@@ -40,7 +38,7 @@ const Admin = () => {
           />
           <label htmlFor="eventTime">Time</label>
           <input
-            type="time"
+            type="string"
             id="eventTime"
             value={eventTime}
             onChange={(e) => setEventTime(e.target.value)}
@@ -67,22 +65,27 @@ const Admin = () => {
           />
           <label htmlFor="eventImage">Image</label>
           <input
-            type="text"
+            type="file"
             id="eventImage"
+            accept=".jpg,.jpeg,.png"
             value={eventImage}
             onChange={(e) => setEventImage(e.target.value)}
           />
-          <label htmlFor="eventLink">Link</label>
+          <label htmlFor="eventLink">Unstop Link</label>
           <input
             type="text"
             id="eventLink"
             value={eventLink}
             onChange={(e) => setEventLink(e.target.value)}
           />
-          <button type="submit" onClick={handleSubmit}>
+          <button
+            type="submit"
+            onClick={handleSubmit}
+            className="bg-gray-600 rounded p-2 hover:bg-gray-700"
+          >
             Create Event
           </button>
-      </div>
+        </div>
       </div>
     </div>
   );
