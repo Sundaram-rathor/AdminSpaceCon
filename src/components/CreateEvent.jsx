@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Admin = () => {
+const CreateEvent = () => {
   const [eventName, setEventName] = useState("");
   const [eventDescription, setEventDescription] = useState("");
   const [eventDate, setEventDate] = useState("");
@@ -27,43 +27,56 @@ const Admin = () => {
 
   return (
     <div>
-      <div className="h-[80vh] p-3 text-gray-300">
+      <div className="p-5">
+        <h1 className="text-2xl text-center text-gray-200 font-bold">Create Event</h1>
         <div className="flex flex-col space-y-2 opacity-85">
-          <label htmlFor="eventDate">Date</label>
+          <label htmlFor="eventDate" className="text-gray-200">
+            Date
+          </label>
           <input
             type="date"
             id="eventDate"
             value={eventDate}
             onChange={(e) => setEventDate(e.target.value)}
           />
-          <label htmlFor="eventTime">Time</label>
+          <label htmlFor="eventTime" className="text-gray-200">
+            Time
+          </label>
           <input
             type="string"
             id="eventTime"
             value={eventTime}
             onChange={(e) => setEventTime(e.target.value)}
           />
-          <label htmlFor="eventName">Name</label>
+          <label htmlFor="eventName" className="text-gray-200">
+            Name
+          </label>
           <input
             type="text"
             id="eventName"
             value={eventName}
             onChange={(e) => setEventName(e.target.value)}
           />
-          <label htmlFor="eventDescription">Description</label>
+          <label htmlFor="eventDescription" className="text-gray-200">
+            Description
+          </label>
           <textarea
             id="eventDescription"
             value={eventDescription}
             onChange={(e) => setEventDescription(e.target.value)}
           />
-          <label htmlFor="eventLocation">Location</label>
+          <label htmlFor="eventLocation" className="text-gray-200">
+            Location
+          </label>
           <input
             type="text"
             id="eventLocation"
             value={eventLocation}
             onChange={(e) => setEventLocation(e.target.value)}
           />
-          <label htmlFor="eventImage">Image</label>
+          <label htmlFor="eventImage" className="text-gray-200">
+            Image
+          </label>
           <input
             type="file"
             id="eventImage"
@@ -71,7 +84,9 @@ const Admin = () => {
             value={eventImage}
             onChange={(e) => setEventImage(e.target.value)}
           />
-          <label htmlFor="eventLink">Unstop Link</label>
+          <label htmlFor="eventLink" className="text-gray-200">
+            Unstop Link
+          </label>
           <input
             type="text"
             id="eventLink"
@@ -81,7 +96,7 @@ const Admin = () => {
           <button
             type="submit"
             onClick={handleSubmit}
-            className="bg-gray-600 rounded p-2 hover:bg-gray-700"
+            className="bg-gray-600 text-gray-200 rounded p-2 hover:bg-gray-800"
           >
             Create Event
           </button>
@@ -91,4 +106,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default CreateEvent;

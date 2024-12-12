@@ -12,6 +12,8 @@ const EventCardAdmin = ({
   imageUrl,
 }) => {
   const handleDelete = () => {};
+  const handleEdit = () => {};
+  
   return (
     <div className="w-80 mx-5 bg-white shadow-lg rounded-xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
       <div>

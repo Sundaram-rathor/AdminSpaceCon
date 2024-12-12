@@ -1,7 +1,6 @@
 import EventCardAdmin from "../components/EventCardAdmin";
 import { Link } from "react-router-dom";
 import Adminsidebar from "../components/Adminsidebar";
-
 import { MdAddCircleOutline } from "react-icons/md";
 
 const Admin = () => {
@@ -71,10 +70,11 @@ const Admin = () => {
           })}
         </div>
         <div className="ml-10 p-10 rounded-xl w-80 max-w-md bg-opacity-40 bg-white transform transition-all duration-300 hover:bg-opacity-20 hover:shadow-2xl">
-          <Link>
+          <Link to="/create-event">
             <MdAddCircleOutline
               style={{ fontSize: "500%", marginLeft: "35%" }}
             />
+       
           </Link>
         </div>
       </div>
